@@ -1,6 +1,8 @@
 import pytest
 import pygame
 from player import Player
+from ghost import Ghost
+import main
 from game_board import GameBoard
 from ghost import Ghost
 
@@ -25,6 +27,7 @@ def ghost():
     return Ghost(100,100,(255,0,0))
 
 
+# PLAYER TESTS
 def test_player_movement_with_obstacles(player, walls):
     # Step 1: Move player towards an obstacle (left wall)
     player.x = 25
@@ -46,7 +49,6 @@ def test_player_movement_with_obstacles(player, walls):
     assert player.x ==  780 # Should not move beyond the right wall
 
 
-# PLAYER TESTS
 def test_player_initialization(player):
     assert player.x == 100
     assert player.y == 100
