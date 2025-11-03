@@ -76,3 +76,26 @@ def test_player_movement_with_obstacles(player, walls):
     # Assert that the player's position hasn't changed, as they can't move past the wall
     assert player.x ==   # Should not move beyond the right wall
 """
+"""
+from item import PowerPellet
+
+@pytest.fixture
+def pellet():
+    return Pellet(100, 100)
+
+@pytest.fixture
+def powerPellet():
+    return PowerPellet(100, 100)
+
+def test_pellet_initialization(pellet):
+    assert pellet.x == 100
+    assert pellet.y == 100
+    assert pellet.radius == 2
+    assert pellet.collected == False
+
+def test_powerPellet_initialization(powerPellet):
+    assert powerPellet.x == 100
+    assert powerPellet.y == 100
+    assert powerPellet.radius == 8
+    assert powerPellet.collected == False
+"""
