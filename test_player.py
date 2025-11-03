@@ -19,27 +19,29 @@ def walls():
         pygame.Rect(780, 0, 20, 600),  # Right wall
     ]
 
+"""
+UNCOMMENT and FILL THIS IN
 
 def test_player_movement_with_obstacles(player, walls):
     # Step 1: Move player towards an obstacle (left wall)
     player.x = 25
     player.y = 100
     player.move("left", walls)
-    assert player.x ==  25 # Should not move through the left wall
+    assert player.x ==  # Should not move through the left wall
 
     # Step 2: Move player towards an obstacle (small obstacle at (200, 200))
     player.x = 190
     player.y = 210
     player.move("right", walls)
-    assert player.x ==  190 # Should not move through the small obstacle
+    assert player.x ==  # Should not move through the small obstacle
 
     # Step 3: Move player towards the right wall (new right wall at x=780)
     player.x = 780
     player.y = 100
     player.move("right", walls)
     # Assert that the player's position hasn't changed, as they can't move past the wall
-    assert player.x ==   780 # Should not move beyond the right wall
-
+    assert player.x ==   # Should not move beyond the right wall
+"""
 
 # PLAYER TESTS
 def test_player_initialization(player):
