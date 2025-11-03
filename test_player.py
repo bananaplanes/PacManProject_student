@@ -2,6 +2,7 @@ import pytest
 import pygame
 from player import Player
 from game_board import GameBoard
+from ghost import Ghost
 
 @pytest.fixture
 def board():
@@ -18,6 +19,10 @@ def walls():
         pygame.Rect(200, 200, 20, 20),  # Small obstacle
         pygame.Rect(780, 0, 20, 600),  # Right wall
     ]
+
+@pytest.fixture
+def ghost():
+    return Ghost(100,100,(255,0,0))
 
 
 def test_player_movement_with_obstacles(player, walls):
@@ -142,3 +147,46 @@ def test_power_pellet_positions(board):
 
         for wall in board.walls:
             assert wall.collidepoint(pellet.x, pellet.y) == False
+
+#GHOST TESTS
+
+def test_ghost_init(ghost):
+    assert ghost.x == 100
+    assert ghost.y == 100
+    assert ghost.speed == 1
+    assert ghost.radius == 10
+    assert ghost.scared == False
+
+def test_ghost_collision_left_wall(ghost, player, walls):
+    ghost.scared = True #get rid of random value
+    ghost.scared_timer = 10
+    ghost.x = 25  # Close to left wall
+    ghost.y = 100
+    ghost.direction = "left"
+    initial_x = ghost.x
+    
+    ghost.move(walls, player)
+    
+    #Should not move through left wall
+    assert ghost.x in {initial_x or initial_x + ghost.speed}
+
+def test_ghost_collision_with_top_wall(ghost, player, walls):
+    ghost.scared = True #get rid of random value
+    ghost.scared_timer = 10
+    ghost.x = 100
+    ghost.y = 15  
+    ghost.direction = "up"
+    initial_y = ghost.y - 1
+    
+    ghost.move(walls, player)
+    
+    #Should not move through top wall
+    assert ghost.y == initial_y
+
+def test_ghost_movement_no_walls(ghost, player):
+    ghost.direction = "right"
+    initial_x = ghost.x
+    initial_y = ghost.y
+    ghost.move([], player)
+    assert ghost.x in {initial_x + ghost.speed, initial_x - ghost.speed, initial_x}
+    assert ghost.y in {initial_y + ghost.speed, initial_y - ghost.speed, initial_y}
