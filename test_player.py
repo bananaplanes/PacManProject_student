@@ -137,9 +137,7 @@ def test_board_inner_walls(board):
 
 def test_pellets_collide(board):
     assert len(board.pellets) > 0
-    assert len(board.pellets) <= ((board.width - 80) / 40) * (
-        (board.height - 80) / 40
-    )
+    assert len(board.pellets) <= ((board.width - 80) / 40) * ((board.height - 80) / 40)
 
     for pellet in board.pellets:
         for wall in board.walls:
