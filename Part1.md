@@ -6,7 +6,7 @@ In this project, you and your team will collaboratively build a Pac-Man game in 
 ## **Objectives**
 1. **Implement key Pac-Man game features**:
    - Game board
-   - Player (Pac-Man)
+   - Pacman (Pac-Man)
    - Ghosts
    - Items (e.g., dots, power pellets)
 2. **Use Git for collaborative development**:
@@ -29,7 +29,7 @@ In this project, you and your team will collaboratively build a Pac-Man game in 
 
 ### **2. Branch Workflow (10 points)**
 Each team member will work on a specific feature. Create separate branches for each feature. The branch names should match the feature assigned:
-- `feature/player`
+- `feature/Pacman`
 - `feature/ghost`
 - `feature/game_board`
 - `feature/item`
@@ -42,7 +42,7 @@ Steps for branching:
 ### **3. Implement Features (10 points)**
 You will find corresponding files for each component in the repository:
 - **game_board.py**: Manages the game grid.
-- **player.py**: Implements Pac-Man's movement and interactions.
+- **Pacman.py**: Implements Pac-Man's movement and interactions.
 - **ghost.py**: Handles ghost behavior and movement.
 - **item.py**: Manages items such as dots and power pellets.
 
@@ -51,7 +51,7 @@ Instructions:
 - If you mistakenly commit code to the wrong branch, fix the Git history by moving your changes to the correct branch and then push it.
 
 ### **4. Write Tests (25 points)**
-Fill in tests for your code in the corresponding test file (e.g., test_player.py for player.py). Follow the example tests to model your tests.
+Fill in tests for your code in the corresponding test file (e.g., test_Pacman.py for Pacman.py). Follow the example tests to model your tests.
 - Use the **pytest** framework for filling in tests.
 - If you find an error, make sure to create an issue on GitHub about it in the base repository. Every team must report at least 1 bug and provide a correct test case to show where the code fails.
 
