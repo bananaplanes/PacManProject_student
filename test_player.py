@@ -4,6 +4,10 @@ import pygame
 from game_board import GameBoard
 from ghost import Ghost
 from player import Player
+from ghost import Ghost
+import main
+from game_board import GameBoard
+from ghost import Ghost
 
 import main
 
@@ -16,7 +20,6 @@ def board():
 @pytest.fixture
 def player():
     return Player(100, 100)
-
 
 @pytest.fixture
 def walls():
