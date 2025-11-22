@@ -20,7 +20,7 @@ In Part 2 of the Pac-Man Project, you will collaborate with your team to impleme
 ## **Steps for Part 2**
 
 ### **1. Rename Components and Implement Updates - 20 points**
-Uh oh, we forgot that player should actually be named Pacman. Rename all appropriate files, branches, code, and dependencies to reflect this name change. Ensure you maintain a clean Git history in this process.
+Uh oh, we forgot that Pacman should actually be named Pacman. Rename all appropriate files, branches, code, and dependencies to reflect this name change. Ensure you maintain a clean Git history in this process.
 
 *Hint: Using `grep` and `sed` can help streamline this process.*
 
